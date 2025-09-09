@@ -1,0 +1,222 @@
+/*-- CSS pantalla de carga*/
+@keyframes fillBar {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+@keyframes fadeScaleOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.05);
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e97194;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeScaleOut 1s ease-in-out 5s forwards;
+}
+
+.loading-title {
+  font-family: "Rock Salt";
+  font-size: 20px;
+  color: #fcdade;
+  text-shadow: 1px 1px 3px black;
+  margin-bottom: 15px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.Betsy-logo {
+  width: 50vh;
+  height: auto;
+  margin-bottom: 10px;
+  animation: popUp 0.8s ease;
+}
+
+.loader-text {
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease;
+}
+.txtCarga {
+  font-family: "Lilita One", sans-serif;
+  font-size: 4vh;
+  color: #fcdade;
+  text-align: center;
+  padding: 0px 20px;
+}
+
+.progress-bar {
+  width: 60%;
+  height: 12px;
+  background-color: #fcdade;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 5px #f39eb2;
+}
+
+.progress {
+  height: 100%;
+  background-color: #f39eb2;
+  width: 0%;
+  animation: fillBar 5s ease-out forwards;
+  border-radius: 20px;
+}
+
+                                             /*-- CSS ELEMENTOS DE PAG*/
+
+body {
+    background: linear-gradient(0deg,rgba(233, 113, 148, 0.5) 50%, rgba(252, 218, 222, 0.2) 100%), url("https://files.catbox.moe/yz1qw9.png");
+
+  
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  margin: 0;
+  height: 100vh;
+  
+    display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
+
+
+                                             /*-- CSS contenedores*/
+
+.contenedor-logo {
+box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+    max-width: 500px; /* Ancho definido */
+    margin: 0 auto;
+ min-width: 300px;
+}
+img{
+  padding-top: 20px;
+ min-width: 360px;
+}
+
+.contenedor-botones {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  width: 90%;
+  min-width: 360px;
+    max-width: 500px; /* Ancho definido */
+    margin: 0 auto;
+  background: #fcdade;
+    border: 5px solid #e97194;
+      border-radius: 20px;
+padding: 20px;
+
+}
+.contenedor-botones, h1 {
+  margin-top: -15px;
+  color: #e97194;
+  text-shadow: 0px 0px 5px #f39eb2;
+  font-family: "Lilita One", sans-serif;
+    width: 90%;
+}
+.boton{
+    display: block;
+  font-family: "Lilita One", sans-serif;
+  font-size: 4vh;
+    font-weight: bold;
+
+    text-decoration: none;
+    background: #f39eb2;
+    border-radius: 20px;
+  border-top: 5px solid #e97194;
+  border-left: 5px solid #e97194;
+  border-right: 5px solid #e97194;
+  border-bottom: 10px solid #e97194;
+    color: #fcdade;
+    text-align: center;
+  padding-top: 4%;
+      margin: 0 auto;
+    width: 90%;
+  height: 36px;
+  max-width: 500px;
+  max-height: 150px;
+
+    margin: 0 auto;
+  margin-top: 10px; /* Espacio entre divs consecutivos */
+  
+  
+}
+.boton:hover {
+transform: scale(1.1);
+    font-size: 5vh;
+    background: #e97194;
+    color: #fcdafe;
+}
+
+
+
+
+               /* CSS MOVILES*/
+
+
+
+
+                                                     /* DOLL */
+/* Page doll coding */
+.page-doll {
+  position: fixed;
+  right: 1px;
+  z-index: 1000;
+  animation: floatThenSpin 5s ease-in-out infinite;
+}
+
+.page-doll img {
+  transform: scale(0.1);
+  padding-bottom: 200px;
+  height: auto;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+  filter: drop-shadow(0 0 6px rgba(255, 200, 245, 0.4)); /* soft glow pastel */
+}
+/* Animasi mengambang + rotasi pelan */
+@keyframes floatThenSpin {
+  0%   { transform: translateY(0) rotate(0deg); }
+  30%  { transform: translateY(-10px) rotate(0deg); }
+  50%  { transform: translateY(-10px) rotate(5deg); }
+  70%  { transform: translateY(-10px) rotate(-5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
